@@ -1,15 +1,14 @@
 # MIPS-5-Stage-Pipelined-Processor
-5 Stage MIPS Processor in C++ with Pipelining implemented.
-This is a cycle-accurate simulator for a 5-stage pipelined MIPS processor in C++. The simulator supports a subset of the MIPS instruction set and models the execution of each instruction with cycle accuracy. The MIPS program is provided to the simulator as a text file “imem.txt” file which is used to initialize the Instruction Memory. Each line of the file corresponds to a Byte stored in the Instruction Memory in binary format, with the first line at address 0, the next line at address 1 and so on. Four contiguous lines correspond to a whole instruction. Note that the words stored in memory are in “Big-Endian” format, meaning that the most significant byte is stored first. The Data Memory is initialized using the “dmem.txt” file. The format of the stored words is the same as the Instruction Memory. As with the instruction memory, the data memory addresses also begin at 0 and increment by one in each line.
+This project is a C++ implementation of a 5-stage MIPS processor with pipelining. The simulator accurately models the execution of instructions in each pipeline stage. It supports a subset of the MIPS instruction set and operates with cycle accuracy. The program takes input from a text file named "imem.txt" to initialize the Instruction Memory. Each line in the file represents a byte stored in the Instruction Memory in binary format. The memory is organized in a Big-Endian format, with the most significant byte stored first. The Data Memory is initialized using another text file named "dmem.txt," following the same format as the Instruction Memory.
 
-MIPS pipeline has the following 5 stages:
+The MIPS pipeline consists of five stages:
 
-1.Fetch (IF):fetches an instruction from instruction memory. Updates PC. 
+Fetch (IF): This stage retrieves an instruction from the Instruction Memory and updates the Program Counter (PC).
 
-2.Decode (ID/RF): reads from the register RF and generates control signals required in subsequent stages. In addition, branches are resolved in this stage by checking for the branch condition and computing the effective address. 
+Decode (ID/RF): In this stage, the instruction is decoded, and the necessary control signals for subsequent stages are generated. Additionally, branch instructions are resolved by evaluating the branch condition and calculating the effective address.
 
-3.Execute (EX): performs an ALU operation. 
+Execute (EX): This stage performs the required Arithmetic Logic Unit (ALU) operation.
 
-4.Memory (MEM): loads or stores a 32-bit word from data memory.
+Memory (MEM): Here, the processor loads or stores a 32-bit word from the Data Memory.
 
-5.Writeback (WB): writes back data to the RF.
+Writeback (WB): In the final stage, the processed data is written back to the Register File (RF).
