@@ -1,18 +1,11 @@
-/*
-
-NAME - MANDAR MHASKE
-MM10435@NYU.EDU
-LAB 1 - PIPELINING WITHOUT FORWARDING OR STALLING OR BEQ
-
-*/
-
+//author ~ pSydak143S
 #include<iostream>
 #include<string>
 #include<vector>
 #include<bitset>
 #include<fstream>
 using namespace std;
-#define MemSize 1000 // memory size, in reality, the memory size should be 2^32, but for this lab, for the space resaon, we keep it as this large number, but the memory is still 32-bit addressable.
+#define MemSize 1000 
 
 struct IFStruct {
     bitset<32>  PC;
